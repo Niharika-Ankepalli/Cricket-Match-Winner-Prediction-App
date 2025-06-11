@@ -95,15 +95,6 @@ All files like .h5, .pkl, and .csv are part of the project folder and required f
 📃 License
 This project is open-source and free to use for educational purposes.
 
-yaml
-Copy
-Edit
-
 ---
 
-### 🟢 Next Steps
-
-1. **Create a file** in your folder called `README.md`.
-2. **Paste the above content** into that file.
-3. If you're uploading to GitHub:
-   - Add the file → Commit → Push to your GitHub repository.
+Thank you for exploring this project! Contributions, feedback, and suggestions are always welcome.
