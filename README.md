@@ -52,20 +52,24 @@ The models are trained using past ODI match data and deployed as a simple web ap
 
 ### Step 1: Clone the repository
 
-```bash
 git clone https://github.com/yourusername/your-repo-name.git
 cd your-repo-name
-Step 2: Install the required libraries
-bash
-Copy
-Edit
+
+---
+
+### Step 2: Install the required libraries
+
 pip install -r requirements.txt
-Step 3: Run the Streamlit app
-bash
-Copy
-Edit
+
+---
+
+### Step 3: Run the Streamlit app
+
 streamlit run app.py
-✅ Inputs You Provide in the Web App
+
+---
+
+### ✅ Inputs You Provide in the Web App
 Batting team
 
 Bowling team
@@ -80,19 +84,25 @@ Toss winner
 
 First innings total
 
-🎯 Output You Get
+---
+
+### 🎯 Output You Get
 Predicted Runs (during first innings)
 
 Predicted Winning Team
 
-📌 Note
+---
+
+### 📌 Note
 This project is for academic and learning purposes only.
 
 No personal or confidential data is included.
 
 All files like .h5, .pkl, and .csv are part of the project folder and required for predictions.
 
-📃 License
+---
+
+### 📃 License
 This project is open-source and free to use for educational purposes.
 
 ---
