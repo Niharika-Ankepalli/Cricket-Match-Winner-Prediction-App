@@ -1,152 +1,99 @@
-# 🏏 Cricket Match Outcome and Runs Prediction using Machine Learning & Neural Networks
+# 🏏 Cricket Runs and Match Winner Prediction using Machine Learning & Neural Networks
 
-This project aims to predict the **total runs scored in the first innings** of a cricket match and the **winning team**, using **Machine Learning (ML)** and **Neural Networks (NN)**. The goal is to support analysis and decision-making for cricket enthusiasts, analysts, and fantasy league players.
+This project predicts:
+1. **Total Runs in a Cricket Match (First Innings)**
+2. **Winning Team of the Match**
 
----
-
-## 📌 Objectives
-
-- Predict the **first innings total runs** using regression models.
-- Predict the **match winner** using classification models.
-- Build a user-friendly **Streamlit app** for interactive predictions.
-- Train models on **real match data** with accurate results.
-- Deploy the app online using **Streamlit Cloud**.
+The models are trained using past ODI match data and deployed as a simple web application using **Streamlit**.
 
 ---
 
-## 📂 Project Structure
+## 📁 Project Files
 
-cricket-prediction/
-├── app.py # Main Streamlit app
-├── run_predictor.py # Backend logic for model inference
-├── dataset.csv # Cleaned match dataset
-├── model.pkl # Trained model for runs prediction
-├── neural_model.h5 # Trained neural network model for winner prediction
-├── requirements.txt # List of required Python libraries
-├── README.md # Project description file
-├── utils/ # Supporting functions or preprocessing
-└── .gitignore # Files excluded from GitHub
-
-yaml
-Copy
-Edit
-
----
-
-## 🧠 Problem Statement
-
-Cricket is influenced by many variables: team composition, ground type, toss decision, and performance during the match. Manually predicting match outcomes is challenging. This project uses data-driven modeling to forecast:
-
-1. The **expected number of runs** in the first innings.
-2. The **likely winner** based on match conditions.
+| File Name                | Purpose                                                           |
+|--------------------------|-------------------------------------------------------------------|
+| `app.py`                 | Main Streamlit app to predict runs and winner                    |
+| `label_encoders.pkl`     | Stores label encoders for input transformation                   |
+| `merged_odi_data.csv`    | Combined dataset of all matches used for model training          |
+| `neural_network_runs.h5` | Neural network model for runs prediction                         |
+| `odi_Batting_Card.csv`   | Player-wise batting data                                         |
+| `odi_Bowling_Card.csv`   | Player-wise bowling data                                         |
+| `odi_Fow_Card.csv`       | Fall of wickets data                                             |
+| `odi_Matches_Data.csv`   | Main match-level data                                            |
+| `players_info.csv`       | Player profiles and basic info                                   |
+| `r&w.ipynb`              | Notebook file used for building and training models              |
+| `scaler_run.pkl`         | Scaler object for runs prediction input                          |
+| `scaler_winner.pkl`      | Scaler object for winner prediction input                        |
+| `requirements.txt`       | List of Python libraries required to run this project            |
 
 ---
 
-## 🧪 Models Used
+## 🔍 Project Features
 
-### 1. First Innings Runs Prediction (Regression)
-- **Features**: Batting team, bowling team, venue, overs, wickets
-- **Models**:
-  - Linear Regression
-  - XGBoost Regressor
-- **Evaluation**: R² Score, Mean Squared Error
-
-### 2. Match Winner Prediction (Classification)
-- **Features**: Toss winner, venue, innings total, team info
-- **Models**:
-  - Logistic Regression
-  - XGBoost Classifier
-  - Neural Network (Keras + TensorFlow)
-- **Evaluation**: Accuracy Score, Confusion Matrix, Classification Report
+- Predict **first innings runs** using historical data and match info.
+- Predict **winning team** based on match conditions and first innings score.
+- Clean and interactive **Streamlit web app** for users.
+- Uses both **Machine Learning** and **Deep Learning** models.
 
 ---
 
-## 📊 Dataset Information
+## 🧪 Technologies Used
 
-- The dataset contains past match records with cleaned and encoded features.
-- Sample columns:
-  - `batting_team`, `bowling_team`, `venue`, `overs`, `wickets`, `total_runs`, `winner`, `toss_winner`, etc.
-- Personal or confidential data is excluded.
-- Data is preprocessed using one-hot encoding, label encoding, and normalization.
+- Python
+- Pandas, NumPy
+- Scikit-learn
+- XGBoost
+- TensorFlow / Keras
+- Streamlit
 
 ---
 
-## 💻 How to Run the Project
+## ▶️ How to Run the Project Locally
 
-### 1. Clone the Repository
+### Step 1: Clone the repository
+
 ```bash
-git clone https://github.com/yourusername/cricket-prediction.git
-cd cricket-prediction
-2. (Optional) Create a Virtual Environment
-bash
-Copy
-Edit
-python -m venv env
-source env/bin/activate        # On Windows: env\Scripts\activate
-3. Install Required Libraries
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+Step 2: Install the required libraries
 bash
 Copy
 Edit
 pip install -r requirements.txt
-4. Launch the App
+Step 3: Run the Streamlit app
 bash
 Copy
 Edit
 streamlit run app.py
-🧾 Sample Input (via Web App)
-Batting team: India
+✅ Inputs You Provide in the Web App
+Batting team
 
-Bowling team: Australia
+Bowling team
 
-Venue: Mumbai
+Venue
 
-Overs: 12.3
+Overs completed
 
-Wickets fallen: 3
+Wickets fallen
 
-Toss winner: India
+Toss winner
 
-First innings total: 180
+First innings total
 
-🎯 Sample Output
-Predicted Runs (1st Innings): 178
+🎯 Output You Get
+Predicted Runs (during first innings)
 
-Predicted Match Winner: India
+Predicted Winning Team
 
-⚙️ Tools & Libraries
-Library/Tool	Purpose
-Pandas, NumPy	Data handling and manipulation
-Matplotlib, Seaborn	Visualizations
-scikit-learn	ML models and evaluation
-XGBoost	Boosting model for regression/classification
-TensorFlow, Keras	Deep learning & neural networks
-Streamlit	Web app framework
+📌 Note
+This project is for academic and learning purposes only.
 
-🌐 Deployment (Streamlit Cloud)
-To deploy your app online:
-Push your code to a public GitHub repository.
+No personal or confidential data is included.
 
-Go to: https://streamlit.io/cloud
-
-Click on “Deploy an app”
-
-Connect your GitHub and select the repo.
-
-Set the main file path as: app.py
-
-Click Deploy.
-
-✅ You will get a public link to share your app.
-
-🚫 Notes on Privacy and GitHub
-.env, passwords, or secret keys are excluded using .gitignore
-
-The uploaded dataset is a sample and cleaned version — not real confidential data.
-
-Large files (>100MB) are not pushed to GitHub.
+All files like .h5, .pkl, and .csv are part of the project folder and required for predictions.
 
 📃 License
-This project is licensed under the MIT License, which allows open usage with attribution.
+This project is open-source and free to use for educational purposes.
 
 yaml
 Copy
@@ -154,11 +101,9 @@ Edit
 
 ---
 
-This version is:
+### 🟢 Next Steps
 
-✅ Detailed  
-✅ Professional  
-✅ Privacy-safe  
-✅ Suitable for interviewers, faculty, and GitHub viewers
-
-Let me know if you want this in `.md` file format or want to add code samples, model accuracy results, or diagrams.
+1. **Create a file** in your folder called `README.md`.
+2. **Paste the above content** into that file.
+3. If you're uploading to GitHub:
+   - Add the file → Commit → Push to your GitHub repository.
